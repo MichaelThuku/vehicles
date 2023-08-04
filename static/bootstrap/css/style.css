@@ -1,0 +1,9 @@
+.bgimage{
+    background-image: url("../../images/download.jpg");
+    width: 100vw;
+    height: 55vw;
+}
+.product-forms .register-form{
+    width: 40%;
+    margin: auto;
+}

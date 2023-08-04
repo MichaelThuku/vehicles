@@ -1,0 +1,20 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+    <div>
+        <h1 class="text-center text-info">Update Vehicle</h1>
+        <p>{{ success }}</p>
+        <form class="product-forms" method="post" action="/update-vehicle/{{ vehicle.id }}">
+            {% csrf_token %}
+            <input value="{{ vehicle.model }}" class="form-control" required placeholder="Update Model" name="m-name" type="text"><br>
+            <input value="{{ vehicle.horsepower }}" class="form-control" required placeholder="Update horsepower" name="h-name" type="text"><br>
+            <input value="{{ vehicle.torque }}" class="form-control" required placeholder="Update torque" name="t-name" type="text"><br>
+            <input value="{{ vehicle.price }}" class="form-control" required placeholder="Update price" name="p-name" type="text"><br>
+            <input class="btn btn-outline-success" value="Update" type="submit">
+
+        </form>
+
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+    <div>
+        <h1 class="text-center text-info">Shop Here</h1>
+
+
+        <table class="table table-info table-hove">
+            <tr>
+                <th>Model</th>
+                <th>Horsepower</th>
+                <th>Torque</th>
+                <th>Price</th>
+                <th>Pay</th>
+            </tr>
+            {% for vehicle in all_vehicles %}
+                <tr>
+                    <td>{{ vehicle.model }}</td>
+                    <td>{{ vehicle.horsepower }}</td>
+                    <td>{{ vehicle.torque }}</td>
+                    <td>{{ vehicle.price }}</td>
+                    <td><a class="btn btn-outline-danger" href="/paying/{{ vehicle.id }}">Pay</a></td>
+                </tr>
+
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}
+
+

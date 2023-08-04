@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car shop</title>
+    {% load static %}
+    {% load crispy_forms_tags %}
+    <script> src={% static '../static/bootstrap/js/bootstrap.js' %}</script>
+    <script> src={% static '../static/bootstrap/js/popper.min.js' %}</script>
+    <script> src={%  static '../static/bootstrap/js/jquery-3.4.0.js' %}</script>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/bootstrap/css/style.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-success navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="{% url 'home-page' %}">Carwow</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'home-page' %}">Home</a>
+      </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'shop' %}">Shop</a>
+      </li>
+        {% if user.is_authenticated %}
+         <li class="nav-item">
+        <a class="nav-link" href="{% url 'vehicles' %}">Vehicle</a>
+      </li>
+         <li class="nav-item">
+        <a class="nav-link" href="{% url 'add-vehicle-page' %}">Add Vehicle</a>
+      </li>
+             <li class="nav-item">
+        <a class="nav-link" href="{% url 'user-logout' %}">Logout</a>
+      </li>
+        {% else %}
+         <li class="nav-item">
+        <a class="nav-link" href="{% url 'user-registration' %}">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'user-login' %}">Login</a>
+      </li>
+        {% endif %}
+    </ul>
+  </div>
+</nav>
+</body>
+{% block content %}
+
+
+
+
+{% endblock %}
+</html>

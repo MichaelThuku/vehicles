@@ -1,0 +1,20 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+    <div>
+        <h1 class="text-center text-info">Add Vehicle</h1>
+        <p>{{ success }}</p>
+        <form class="product-forms" method="post" action="{% url 'add-vehicle-page' %}">
+            {% csrf_token %}
+            <input class="form-control" required placeholder="Enter Model" name="m-name" type="text"><br>
+            <input class="form-control" required placeholder="Enter horsepower" name="h-name" type="text"><br>
+            <input class="form-control" required placeholder="Enter torque" name="t-name" type="text"><br>
+            <input class="form-control" required placeholder="Enter price" name="p-name" type="text"><br>
+            <input class="btn btn-outline-success" value="save" type="submit">
+
+        </form>
+
+
+    </div>
+
+{% endblock %}
